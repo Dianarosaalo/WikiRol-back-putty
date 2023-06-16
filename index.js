@@ -7,7 +7,7 @@ const users = require(__dirname + '/routes/users');
 const personajes = require(__dirname + '/routes/personajes');
 const partidas = require(__dirname + '/routes/partidas');
 
-mongoose.connect(/*'mongodb://mymongodb/wikiRol'*/'mongodb://localhost:27017/wikiRol', 
+mongoose.connect('mongodb://mymongodb/wikiRol', 
     {useNewUrlParser: true});
 
 let app = express();
