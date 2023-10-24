@@ -11,6 +11,22 @@ router.get('/', (req, res) => {
     }); 
 });
 
+router.get('/scroll', async (req, res) => {
+
+    const pageNumber = parseInt(req.query.pageNumber) || 1;
+    const pageSize = parseInt(req.query.pageSize) || 18;
+
+    try {
+        const resultado = await Personaje.find({})
+          .skip((pageNumber - 1) * pageSize)
+          .limit(pageSize);
+    
+        res.send({personajes:resultado});
+      } catch (error) {
+        res.status(500).json({ error: 'An error occurred while retrieving characters.' });
+      }
+});
+
 router.get('/:id', (req, res) => {
     Personaje.findById(req.params['id']).then(resultado => {
         res.status(200).send({personaje: resultado});
