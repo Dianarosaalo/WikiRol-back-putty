@@ -31,12 +31,17 @@ router.get('/scroll', async (req, res) => {
     const pageNumber = parseInt(req.query.pageNumber) || 1;
     const pageSize = parseInt(req.query.pageSize) || 18;
     const creator = req.query.creator; // Get the 'creator' parameter from the request query.
+    const campanya = req.query.campanya;
 
     try {
         const query = {};
 
         if (creator) {
             query.creator = creator; // Add a filter for the 'creator' if it's provided.
+        }
+
+        if (campanya) {
+            query.campanya = campanya; // Add a filter for the 'creator' if it's provided.
         }
 
         const resultado = await Personaje.find(query)
