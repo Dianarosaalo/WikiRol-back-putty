@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     }); 
 });
 
-router.get('/scroll', async (req, res) => {
+/*router.get('/scroll', async (req, res) => {
 
     const pageNumber = parseInt(req.query.pageNumber) || 1;
     const pageSize = parseInt(req.query.pageSize) || 18;
@@ -25,6 +25,28 @@ router.get('/scroll', async (req, res) => {
       } catch (error) {
         res.status(500).json({ error: 'An error occurred while retrieving characters.' });
       }
+});*/
+
+router.get('/scroll', async (req, res) => {
+    const pageNumber = parseInt(req.query.pageNumber) || 1;
+    const pageSize = parseInt(req.query.pageSize) || 18;
+    const creator = req.query.creator; // Get the 'creator' parameter from the request query.
+
+    try {
+        const query = {};
+
+        if (creator) {
+            query.creator = creator; // Add a filter for the 'creator' if it's provided.
+        }
+
+        const resultado = await Personaje.find(query)
+            .skip((pageNumber - 1) * pageSize)
+            .limit(pageSize);
+
+        res.send({ personajes: resultado });
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred while retrieving characters.' });
+    }
 });
 
 router.get('/:id', (req, res) => {
