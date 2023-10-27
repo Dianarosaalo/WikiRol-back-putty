@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 
 router.get('/scroll', async (req, res) => {
     const pageNumber = parseInt(req.query.pageNumber) || 1;
-    const pageSize = parseInt(req.query.pageSize) || 60;
+    const pageSize = parseInt(req.query.pageSize) || 18;
     const creator = req.query.creator; // Get the 'creator' parameter from the request query.
     const campanya = req.query.campanya;
     const partidaAparicion = req.query.partidaAparicion;
