@@ -32,6 +32,7 @@ router.get('/scroll', async (req, res) => {
     const pageSize = parseInt(req.query.pageSize) || 18;
     const creator = req.query.creator; // Get the 'creator' parameter from the request query.
     const campanya = req.query.campanya;
+    const partidaAparicion = req.query.partidaAparicion;
 
     try {
         const query = {};
@@ -41,7 +42,11 @@ router.get('/scroll', async (req, res) => {
         }
 
         if (campanya) {
-            query.campanya = campanya; // Add a filter for the 'creator' if it's provided.
+            query.campanya = campanya; // Add a filter for the 'campanya' if it's provided.
+        }
+
+        if (partidaAparicion) {
+            query.partidaAparicion = partidaAparicion; // Add a filter for the 'partidaAparicion' if it's provided.
         }
 
         const resultado = await Personaje.find(query)
