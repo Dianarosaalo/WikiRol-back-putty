@@ -59,6 +59,23 @@ router.get('/scroll', async (req, res) => {
     }
 });
 
+router.get('/tier', async (req, res) => {
+    const tier = req.query.tier;
+
+    try {
+        const query = {};
+        if (tier) {
+            query.tier = tier; // Add a filter for the 'tier' if it's provided.
+        }
+
+        const resultado = await Personaje.find(query);
+        res.send({ personajes: resultado });
+        
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred while retrieving characters.' });
+    }
+});
+
 router.get('/:id', (req, res) => {
     Personaje.findById(req.params['id']).then(resultado => {
         res.status(200).send({personaje: resultado});
