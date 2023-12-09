@@ -123,7 +123,11 @@ let personajesSchema= new mongoose.Schema({
           privacy:Boolean
         }],
         trim: true
-      },
+    },
+    reader:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);

@@ -128,7 +128,9 @@ router.post('/', (req, res) => {
         movimiento:req.body.movimiento,
         private:req.body.private,
         tier:req.body.tier,
-        canciones:req.body.canciones
+        canciones:req.body.canciones,
+
+        reader:req.body.reader
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -174,7 +176,9 @@ router.put('/:id', (req, res) => {
             movimiento:req.body.movimiento,
             private:req.body.private,
             tier:req.body.tier,
-            canciones:req.body.canciones
+            canciones:req.body.canciones,
+
+            reader:req.body.reader
         }
     }, {new: true}).then(resultado => {
        
