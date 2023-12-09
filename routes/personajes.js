@@ -41,8 +41,18 @@ router.get('/scroll', async (req, res) => {
             query.creator = creator; // Add a filter for the 'creator' if it's provided.
         }
 
-        if (campanya) {
+        /*if (campanya) {
             query.campanya = campanya; // Add a filter for the 'campanya' if it's provided.
+        }*/
+
+        if (campanya) {
+            // Add a filter for 'campanya' if it's provided.
+            query.campanya = {
+                $or: [
+                    { $eq: campanya }, // Check if 'campanya' is equal.
+                    { $in: ['campanyasSecundarias', campanya] } // Check if 'campanyasSecundarias' contains the value.
+                ]
+            };
         }
 
         if (partidaAparicion) {
@@ -131,7 +141,7 @@ router.post('/', (req, res) => {
         canciones:req.body.canciones,
 
         reader:req.body.reader,
-        campanyaSecundaria:req.body.campanyaSecundaria
+        campanyasSecundarias:req.body.campanyasSecundarias
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -180,7 +190,7 @@ router.put('/:id', (req, res) => {
             canciones:req.body.canciones,
 
             reader:req.body.reader,
-            campanyaSecundaria:req.body.campanyaSecundaria
+            campanyasSecundarias:req.body.campanyasSecundarias
         }
     }, {new: true}).then(resultado => {
        

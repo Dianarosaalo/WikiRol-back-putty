@@ -128,9 +128,8 @@ let personajesSchema= new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    campanyaSecundaria:{
-        type: String,
-        //enum:["Spin-Offs","Egathea","Caminos de Sangre","Aryma","Yggdrassil"],
+    campanyasSecundarias:{
+        type: [String]
     },
 });
 
