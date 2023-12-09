@@ -128,6 +128,10 @@ let personajesSchema= new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
+    campanyaSecundaria:{
+        type: String,
+        //enum:["Spin-Offs","Egathea","Caminos de Sangre","Aryma","Yggdrassil"],
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);

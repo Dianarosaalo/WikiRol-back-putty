@@ -130,7 +130,8 @@ router.post('/', (req, res) => {
         tier:req.body.tier,
         canciones:req.body.canciones,
 
-        reader:req.body.reader
+        reader:req.body.reader,
+        campanyaSecundaria:req.body.campanyaSecundaria
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -178,7 +179,8 @@ router.put('/:id', (req, res) => {
             tier:req.body.tier,
             canciones:req.body.canciones,
 
-            reader:req.body.reader
+            reader:req.body.reader,
+            campanyaSecundaria:req.body.campanyaSecundaria
         }
     }, {new: true}).then(resultado => {
        
