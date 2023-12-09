@@ -47,12 +47,10 @@ router.get('/scroll', async (req, res) => {
 
         if (campanya) {
             // Add a filter for 'campanya' if it's provided.
-            query.campanya = {
-                $or: [
-                    { $eq: campanya }, // Check if 'campanya' is equal.
-                    { $in: ['campanyasSecundarias', campanya] } // Check if 'campanyasSecundarias' contains the value.
-                ]
-            };
+            query.$or = [
+                { campanya: campanya }, // Check if 'campanya' is equal.
+                { campanyasSecundarias: campanya } // Check if 'campanyasSecundarias' contains the value.
+            ];
         }
 
         if (partidaAparicion) {
