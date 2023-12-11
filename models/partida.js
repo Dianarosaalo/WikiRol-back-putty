@@ -13,7 +13,7 @@ let partidaSchema=new mongoose.Schema({
     },
     campanya:{
         type: String,
-        enum:["Spin-Offs","Egathea","Caminos de Sangre","Aryma","Yggdrassil"],
+        //enum:["Spin-Offs","Egathea","Caminos de Sangre","Aryma","Yggdrassil"],
         required:true
     },
     fechaJugada:{

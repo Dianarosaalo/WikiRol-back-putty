@@ -6,6 +6,7 @@ const cors = require("cors");
 const users = require(__dirname + '/routes/users');
 const personajes = require(__dirname + '/routes/personajes');
 const partidas = require(__dirname + '/routes/partidas');
+const facciones = require(__dirname + '/routes/facciones');
 
 mongoose.connect('mongodb://mymongodb/wikiRol', 
     {useNewUrlParser: true});
@@ -28,5 +29,6 @@ app.use(methodOverride(function (req, res) {
 app.use('/personajes', personajes);
 app.use('/partidas', partidas);
 app.use('/users', users);
+app.use('/facciones', facciones);
 
 app.listen(8080);
