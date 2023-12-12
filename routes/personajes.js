@@ -84,6 +84,28 @@ router.get('/tier', async (req, res) => {
     }
 });
 
+router.get('/busqueda', async (req, res) => {
+    const nombre = req.query.nombre;
+    const faccion = req.query.faccion;
+
+    try {
+        const query = {};
+        if (nombre) {
+            query.nombre = { $regex: new RegExp(nombre, 'i') };
+        }
+
+        if (faccion) {
+            query.facciones = { $in: [faccion] };
+        }
+
+        const resultado = await Personaje.find(query);
+        res.send({ personajes: resultado });
+        
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred while retrieving characters.' });
+    }
+});
+
 router.get('/:id', (req, res) => {
     Personaje.findById(req.params['id']).then(resultado => {
         res.status(200).send({personaje: resultado});
