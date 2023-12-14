@@ -67,7 +67,11 @@ let personajesSchema= new mongoose.Schema({
         type: [{
           title: String,
           info: String,
-          privacy:Boolean
+          privacy:Boolean,
+          type: {
+            type: String,
+            optional: true,
+          },
         }],
         trim: true
       },
