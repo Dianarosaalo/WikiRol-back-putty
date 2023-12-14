@@ -33,12 +33,7 @@ let personajesSchema= new mongoose.Schema({
         type:String,
     },
     reliquia:{
-        type: [{
-            title: String,
-            info: String,
-            privacy:Boolean,
-          }],
-          trim: true
+        type:[String],
 
     },
     intergalactico:{
@@ -46,13 +41,8 @@ let personajesSchema= new mongoose.Schema({
 
     },
     singularidad:{
-        type: [{
-            title: String,
-            info: String,
-            privacy:Boolean,
-            type:String
-          }],
-          trim: true
+        type:[String]
+
     },
     facciones:{
         type:[String]
@@ -77,8 +67,7 @@ let personajesSchema= new mongoose.Schema({
         type: [{
           title: String,
           info: String,
-          privacy:Boolean,
-          type:String
+          privacy:Boolean
         }],
         trim: true
       },
