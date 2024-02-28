@@ -135,6 +135,9 @@ let personajesSchema= new mongoose.Schema({
     campanyasSecundarias:{
         type: [String]
     },
+    deidad:{
+        type:String,
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);
