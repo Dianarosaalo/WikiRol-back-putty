@@ -141,6 +141,15 @@ let personajesSchema= new mongoose.Schema({
     deidad:{
         type:String,
     },
+    altura:{
+        type:Number
+    },
+    peso:{
+        type:Number
+    },
+    competencia:{
+        type:Number
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);
