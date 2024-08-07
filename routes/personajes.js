@@ -162,7 +162,8 @@ router.post('/', (req, res) => {
 
         reader:req.body.reader,
         campanyasSecundarias:req.body.campanyasSecundarias,
-        deidad:req.body.deidad
+        deidad:req.body.deidad,
+        privateStats:req.body.privateStats
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -212,7 +213,8 @@ router.put('/:id', (req, res) => {
 
             reader:req.body.reader,
             campanyasSecundarias:req.body.campanyasSecundarias,
-            deidad:req.body.deidad
+            deidad:req.body.deidad,
+            privateStats:req.body.privateStats
         }
     }, {new: true}).then(resultado => {
        

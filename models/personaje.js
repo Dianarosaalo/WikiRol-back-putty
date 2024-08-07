@@ -101,7 +101,7 @@ let personajesSchema= new mongoose.Schema({
     },
     jugador:{ //esto igual no
         type:String,
-        //enum:["Manu","Furro","Marcos","Adriwebo","Barakiel","Jorge","Diego","Tito","Mario","Invitado"]
+        //enum:["Diana","Furro","Marcos","Adriwebo","Barakiel","Jorge","Diego","Tito","Mario","Invitado"]
     },
     tipoJuego:{
         type:String,
@@ -115,6 +115,9 @@ let personajesSchema= new mongoose.Schema({
         type:Number,
     },
     private:{
+        type:Boolean
+    },
+    privateStats:{
         type:Boolean
     },
     tier:{
