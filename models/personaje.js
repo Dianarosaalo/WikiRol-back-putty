@@ -150,6 +150,9 @@ let personajesSchema= new mongoose.Schema({
     competencia:{
         type:Number
     },
+    salvaciones:{
+        type:[Number]
+    }
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);

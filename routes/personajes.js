@@ -167,7 +167,8 @@ router.post('/', (req, res) => {
 
         altura:req.body.altura,
         peso:req.body.peso,
-        competencia:req.body.competencia
+        competencia:req.body.competencia,
+        salvaciones:req.body.salvaciones
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -222,7 +223,8 @@ router.put('/:id', (req, res) => {
 
             altura:req.body.altura,
             peso:req.body.peso,
-            competencia:req.body.competencia
+            competencia:req.body.competencia,
+            salvaciones:req.body.salvaciones
 
         }
     }, {new: true}).then(resultado => {
