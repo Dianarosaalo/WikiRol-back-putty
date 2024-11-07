@@ -168,7 +168,12 @@ router.post('/', (req, res) => {
         altura:req.body.altura,
         peso:req.body.peso,
         competencia:req.body.competencia,
-        salvaciones:req.body.salvaciones
+        salvaciones:req.body.salvaciones,
+
+        percepcion:req.body.percepcion, //new properties
+        investigacion:req.body.investigacion,
+        experiencia:req.body.experiencia,
+        iniciativa:req.body.iniciativa
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -224,7 +229,12 @@ router.put('/:id', (req, res) => {
             altura:req.body.altura,
             peso:req.body.peso,
             competencia:req.body.competencia,
-            salvaciones:req.body.salvaciones
+            salvaciones:req.body.salvaciones,
+
+            percepcion:req.body.percepcion, //new properties
+            investigacion:req.body.investigacion,
+            experiencia:req.body.experiencia,
+            iniciativa:req.body.iniciativa
 
         }
     }, {new: true}).then(resultado => {

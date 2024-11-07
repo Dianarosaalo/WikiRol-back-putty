@@ -152,7 +152,19 @@ let personajesSchema= new mongoose.Schema({
     },
     salvaciones:{
         type:[Number]
-    }
+    },
+    percepcion:{
+        type:Number
+    },
+    investigacion:{
+        type:Number
+    },
+    experiencia:{
+        type:Number
+    },
+    iniciativa:{
+        type:Number
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);
