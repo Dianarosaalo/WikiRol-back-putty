@@ -106,6 +106,23 @@ router.get('/busqueda', async (req, res) => {
     }
 });
 
+router.get('/versiones', async (req, res) => {
+    const idVersion = req.query.version;
+
+    try {
+        const query = {};
+        if (idVersion) {
+            query._id = idVersion; // This will filter by the specific `_id` in the Personaje collection
+        }
+
+        const resultado = await Personaje.find(query);
+        res.send({ personajes: resultado });
+        
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred while retrieving characters.' });
+    }
+});
+
 router.get('/:id', (req, res) => {
     Personaje.findById(req.params['id']).then(resultado => {
         res.status(200).send({personaje: resultado});
