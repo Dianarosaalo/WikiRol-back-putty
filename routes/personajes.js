@@ -173,7 +173,10 @@ router.post('/', (req, res) => {
         percepcion:req.body.percepcion, //new properties
         investigacion:req.body.investigacion,
         experiencia:req.body.experiencia,
-        iniciativa:req.body.iniciativa
+        iniciativa:req.body.iniciativa,
+
+        version:req.body.version,
+        hiddenInTierList: req.body.hiddenInTierList
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -234,7 +237,10 @@ router.put('/:id', (req, res) => {
             percepcion:req.body.percepcion, //new properties
             investigacion:req.body.investigacion,
             experiencia:req.body.experiencia,
-            iniciativa:req.body.iniciativa
+            iniciativa:req.body.iniciativa,
+
+            version:req.body.version,
+            hiddenInTierList: req.body.hiddenInTierList
 
         }
     }, {new: true}).then(resultado => {

@@ -165,6 +165,13 @@ let personajesSchema= new mongoose.Schema({
     iniciativa:{
         type:Number
     },
+    version: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "Personaje"
+    },
+    hiddenInTierList:{
+        type:Boolean
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);
