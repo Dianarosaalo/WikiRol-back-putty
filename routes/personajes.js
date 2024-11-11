@@ -112,7 +112,7 @@ router.get('/versiones', async (req, res) => {
     try {
         const query = {};
         if (idVersion) {
-            query._id = idVersion; // This will filter by the specific `_id` in the Personaje collection
+            query.version = idVersion; // This will filter by the specific `_id` in the Personaje collection
         }
 
         const resultado = await Personaje.find(query);
