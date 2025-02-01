@@ -166,8 +166,9 @@ let personajesSchema= new mongoose.Schema({
         type:Number
     },
     version: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Personaje"
+        //type: mongoose.Schema.Types.ObjectId,
+        //ref: "Personaje"
+        type:String
     },
     hiddenInTierList:{
         type:Boolean
