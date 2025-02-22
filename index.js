@@ -7,6 +7,7 @@ const users = require(__dirname + '/routes/users');
 const personajes = require(__dirname + '/routes/personajes');
 const partidas = require(__dirname + '/routes/partidas');
 const facciones = require(__dirname + '/routes/facciones');
+const escenarios = require(__dirname + '/routes/escenarios')
 
 mongoose.connect('mongodb://mymongodb/wikiRol', 
     {useNewUrlParser: true});
@@ -30,5 +31,6 @@ app.use('/personajes', personajes);
 app.use('/partidas', partidas);
 app.use('/users', users);
 app.use('/facciones', facciones);
+app.use('/escenarios', escenarios);
 
 app.listen(8080);
