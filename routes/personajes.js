@@ -193,7 +193,8 @@ router.post('/', (req, res) => {
         iniciativa:req.body.iniciativa,
 
         version:req.body.version,
-        hiddenInTierList: req.body.hiddenInTierList
+        hiddenInTierList: req.body.hiddenInTierList,
+        bestiario:req.body.bestiario,
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -257,7 +258,8 @@ router.put('/:id', (req, res) => {
             iniciativa:req.body.iniciativa,
 
             version:req.body.version,
-            hiddenInTierList: req.body.hiddenInTierList
+            hiddenInTierList: req.body.hiddenInTierList,
+            bestiario:req.body.bestiario,
 
         }
     }, {new: true}).then(resultado => {

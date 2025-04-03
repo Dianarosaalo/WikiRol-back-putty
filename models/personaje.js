@@ -173,6 +173,9 @@ let personajesSchema= new mongoose.Schema({
     hiddenInTierList:{
         type:Boolean
     },
+    bestiario:{
+        type:String,
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);
