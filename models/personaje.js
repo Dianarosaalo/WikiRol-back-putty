@@ -176,6 +176,10 @@ let personajesSchema= new mongoose.Schema({
     bestiario:{
         type:String,
     },
+    marcaNegra:{
+        type:Boolean
+
+    },
 });
 
 let Personaje = mongoose.model('personajes', personajesSchema);
