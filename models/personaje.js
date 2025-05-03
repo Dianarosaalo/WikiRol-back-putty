@@ -178,7 +178,9 @@ let personajesSchema= new mongoose.Schema({
     },
     marcaNegra:{
         type:Boolean
-
+    },
+    ordenVersion:{
+        type:Number,
     },
 });
 

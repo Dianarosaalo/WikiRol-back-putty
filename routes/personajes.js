@@ -196,6 +196,8 @@ router.post('/', (req, res) => {
         hiddenInTierList: req.body.hiddenInTierList,
         bestiario:req.body.bestiario,
         marcaNegra:req.body.marcaNegra,
+
+        ordenVersion:req.body.ordenVersion,
     });
     nuevoPersonaje.save().then(resultado => {
         res.sendStatus(200);
@@ -262,6 +264,7 @@ router.put('/:id', (req, res) => {
             hiddenInTierList: req.body.hiddenInTierList,
             bestiario:req.body.bestiario,
             marcaNegra:req.body.marcaNegra,
+            ordenVersion:req.body.ordenVersion,
 
         }
     }, {new: true}).then(resultado => {
